@@ -13,7 +13,7 @@ void Drivetrain::Drive(units::meters_per_second_t xSpeed, units::meters_per_seco
   auto [fl, fr, bl, br] = states;
   
 
-  if (xSpeed.to<double>() == 0 && ySpeed.to<double>() == 0) {
+  if (xSpeed.to<double>() == 0 && ySpeed.to<double>() == 0 && rot.to<double>() == 0) {
     fl.angle = pfl.angle;
     fr.angle = pfr.angle;
     bl.angle = pbl.angle;
