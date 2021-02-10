@@ -1,19 +1,34 @@
 See file:///C:/Users/FRC%20Programmers/Desktop/FRC%20Programs/SwerveMainTestWithGyro/build/tmp/compileFrcUserProgramDebugExecutableFrcUserProgramCpp/output.txt for all output for compileFrcUserProgramDebugExecutableFrcUserProgramCpp.
-compiling Robot.cpp successful.
+compiling SwerveModule.cpp successful.
 In file included from C:\Users\FRC Programmers\.gradle\caches\transforms-2\files-2.1\246d2968206faa917dfa3b06fbd3505b\SparkMax-cpp-1.5.4-headers/rev/CANSparkMax.h:37:0,
                  from C:\Users\FRC Programmers\Desktop\FRC Programs\SwerveMainTestWithGyro\src\main\include/SwerveModule.h:17,
-                 from C:\Users\FRC Programmers\Desktop\FRC Programs\SwerveMainTestWithGyro\src\main\include/Drivetrain.h:17,
-                 from C:\Users\FRC Programmers\Desktop\FRC Programs\SwerveMainTestWithGyro\src\main\cpp\Robot.cpp:16:
+                 from C:\Users\FRC Programmers\Desktop\FRC Programs\SwerveMainTestWithGyro\src\main\cpp\SwerveModule.cpp:8:
 C:\Users\FRC Programmers\.gradle\caches\transforms-2\files-2.1\246d2968206faa917dfa3b06fbd3505b\SparkMax-cpp-1.5.4-headers/rev/CANDigitalInput.h:42:16: warning: attribute ignored in declaration of 'enum class rev::CANDigitalInput::LimitSwitch' [-Wattributes]
      enum class LimitSwitch { kForward, kReverse };
                 ^~~~~~~~~~~
 C:\Users\FRC Programmers\.gradle\caches\transforms-2\files-2.1\246d2968206faa917dfa3b06fbd3505b\SparkMax-cpp-1.5.4-headers/rev/CANDigitalInput.h:42:16: note: attribute for 'enum class rev::CANDigitalInput::LimitSwitch' must follow the 'enum class' keyword
 
-compiling Drivetrain.cpp successful.
+compiling Drivetrain.cpp failed.
 In file included from C:\Users\FRC Programmers\.gradle\caches\transforms-2\files-2.1\246d2968206faa917dfa3b06fbd3505b\SparkMax-cpp-1.5.4-headers/rev/CANSparkMax.h:37:0,
                  from C:\Users\FRC Programmers\Desktop\FRC Programs\SwerveMainTestWithGyro\src\main\include/SwerveModule.h:17,
-                 from C:\Users\FRC Programmers\Desktop\FRC Programs\SwerveMainTestWithGyro\src\main\include/Drivetrain.h:17,
+                 from C:\Users\FRC Programmers\Desktop\FRC Programs\SwerveMainTestWithGyro\src\main\include/Drivetrain.h:18,
                  from C:\Users\FRC Programmers\Desktop\FRC Programs\SwerveMainTestWithGyro\src\main\cpp\Drivetrain.cpp:8:
+C:\Users\FRC Programmers\.gradle\caches\transforms-2\files-2.1\246d2968206faa917dfa3b06fbd3505b\SparkMax-cpp-1.5.4-headers/rev/CANDigitalInput.h:42:16: warning: attribute ignored in declaration of 'enum class rev::CANDigitalInput::LimitSwitch' [-Wattributes]
+     enum class LimitSwitch { kForward, kReverse };
+                ^~~~~~~~~~~
+C:\Users\FRC Programmers\.gradle\caches\transforms-2\files-2.1\246d2968206faa917dfa3b06fbd3505b\SparkMax-cpp-1.5.4-headers/rev/CANDigitalInput.h:42:16: note: attribute for 'enum class rev::CANDigitalInput::LimitSwitch' must follow the 'enum class' keyword
+C:\Users\FRC Programmers\Desktop\FRC Programs\SwerveMainTestWithGyro\src\main\cpp\Drivetrain.cpp: In member function 'void Drivetrain::Drive(units::velocity::meters_per_second_t, units::velocity::meters_per_second_t, units::angular_velocity::radians_per_second_t, bool)':
+C:\Users\FRC Programmers\Desktop\FRC Programs\SwerveMainTestWithGyro\src\main\cpp\Drivetrain.cpp:24:7: error: no match for 'operator[]' (operand types are 'std::tuple_element<0, std::array<frc::SwerveModuleState, 4> >::type {aka frc::SwerveModuleState}' and 'int')
+     fl[1] = pfl[1];
+       ^
+C:\Users\FRC Programmers\Desktop\FRC Programs\SwerveMainTestWithGyro\src\main\cpp\Drivetrain.cpp:24:16: error: no match for 'operator[]' (operand types are 'frc::SwerveModuleState' and 'int')
+     fl[1] = pfl[1];
+                ^
+
+compiling Robot.cpp successful.
+In file included from C:\Users\FRC Programmers\.gradle\caches\transforms-2\files-2.1\246d2968206faa917dfa3b06fbd3505b\SparkMax-cpp-1.5.4-headers/rev/CANSparkMax.h:37:0,
+                 from C:\Users\FRC Programmers\Desktop\FRC Programs\SwerveMainTestWithGyro\src\main\include/SwerveModule.h:17,
+                 from C:\Users\FRC Programmers\Desktop\FRC Programs\SwerveMainTestWithGyro\src\main\cpp\Robot.cpp:11:
 C:\Users\FRC Programmers\.gradle\caches\transforms-2\files-2.1\246d2968206faa917dfa3b06fbd3505b\SparkMax-cpp-1.5.4-headers/rev/CANDigitalInput.h:42:16: warning: attribute ignored in declaration of 'enum class rev::CANDigitalInput::LimitSwitch' [-Wattributes]
      enum class LimitSwitch { kForward, kReverse };
                 ^~~~~~~~~~~
