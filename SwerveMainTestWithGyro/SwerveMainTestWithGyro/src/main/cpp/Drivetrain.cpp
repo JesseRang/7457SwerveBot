@@ -59,3 +59,4 @@ void Drivetrain::UpdateOdometry()
   m_odometry.Update(GetAngle(), m_frontLeft.GetState(), m_frontRight.GetState(),
                     m_backLeft.GetState(), m_backRight.GetState());
 }
+
