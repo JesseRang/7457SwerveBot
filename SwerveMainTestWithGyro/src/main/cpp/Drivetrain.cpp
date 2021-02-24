@@ -10,8 +10,21 @@ void Drivetrain::Drive(units::meters_per_second_t xSpeed, units::meters_per_seco
   m_kinematics.NormalizeWheelSpeeds(&states, kMaxSpeed);
 
   auto [fl, fr, bl, br] = states;
-  
 
+  fl.speed *= 1.25;
+  fr.speed *= 1.25;
+  bl.speed *= 1.25;
+  br.speed *= 1.25;
+
+  units::dimensionless::scalar_t totalModules = 4;
+  units::dimensionless::scalar_t average = (fl.speed.to<double>() + fr.speed.to<double>() + bl.speed.to<double>() + br.speed.to<double>())/totalModules;
+  units::dimensionless::scalar_t linearFix{0}; //the lower it is, the more squared the drive is, range from 0 to 1
+
+  fl.speed = (linearFix * fl.speed) + ((1 - linearFix) * ((average) * fl.speed));
+  fr.speed = (linearFix * fr.speed) + ((1 - linearFix) * ((average) * fr.speed));
+  bl.speed = (linearFix * bl.speed) + ((1 - linearFix) * ((average) * bl.speed));
+  br.speed = (linearFix * br.speed) + ((1 - linearFix) * ((average) * br.speed));
+  
   if (xSpeed.to<double>() == 0 && ySpeed.to<double>() == 0 && rot.to<double>() == 0) { //added rot to prevent wheels not changing when trying to rotate
     fl.angle = pfl.angle;
     fr.angle = pfr.angle;
@@ -25,9 +38,9 @@ void Drivetrain::Drive(units::meters_per_second_t xSpeed, units::meters_per_seco
   pbr.angle = br.angle;
 
   flb = m_frontLeft.SetDesiredState(fl, autonomous, distance, maxVelocity);
-  frb = m_frontRight.SetDesiredState(fr, autonomous, distance, maxVelocity);
-  blb = m_backLeft.SetDesiredState(bl, autonomous, distance, maxVelocity);
-  brb = m_backRight.SetDesiredState(br, autonomous, distance, maxVelocity);
+  frb = m_frontRight.SetDesiredState(fr, autonomous, distance, maxVelocity); 
+  blb = m_backLeft.SetDesiredState(bl, autonomous, distance, maxVelocity); 
+  brb = m_backRight.SetDesiredState(br, autonomous, distance, maxVelocity); 
 
   if (flb + frb + blb + brb > 0) {
     arrived = true;
@@ -35,7 +48,10 @@ void Drivetrain::Drive(units::meters_per_second_t xSpeed, units::meters_per_seco
     arrived = false;
   }
 
-  frc::SmartDashboard::PutNumber("FLCurrentAngle", m_frontLeft.GetAngle());
+  //frc::SmartDashboard::PutNumber("FLCurrentAngle", m_frontLeft.GetAngle());
+  //frc::SmartDashboard::PutNumber("FRCurrentAngle", m_frontRight.GetAngle());
+  //frc::SmartDashboard::PutNumber("BLCurrentAngle", m_backLeft.GetAngle());
+  //frc::SmartDashboard::PutNumber("BRCurrentAngle", m_backRight.GetAngle());
 }
 
 void Drivetrain::UpdateOdometry()

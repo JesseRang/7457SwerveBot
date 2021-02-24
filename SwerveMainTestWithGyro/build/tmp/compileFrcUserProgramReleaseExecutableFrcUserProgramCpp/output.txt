@@ -7,14 +7,6 @@ C:\Users\FRC Programmers\.gradle\caches\transforms-2\files-2.1\246d2968206faa917
      enum class LimitSwitch { kForward, kReverse };
                 ^~~~~~~~~~~
 C:\Users\FRC Programmers\.gradle\caches\transforms-2\files-2.1\246d2968206faa917dfa3b06fbd3505b\SparkMax-cpp-1.5.4-headers/rev/CANDigitalInput.h:42:16: note: attribute for 'enum class rev::CANDigitalInput::LimitSwitch' must follow the 'enum class' keyword
-C:\Users\FRC Programmers\Desktop\FRC Programs\SwerveMainTestWithGyro\src\main\cpp\SwerveModule.cpp: In member function 'bool SwerveModule::SetDesiredState(const frc::SwerveModuleState&, bool, double, double)':
-C:\Users\FRC Programmers\Desktop\FRC Programs\SwerveMainTestWithGyro\src\main\cpp\SwerveModule.cpp:167:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-C:\Users\FRC Programmers\Desktop\FRC Programs\SwerveMainTestWithGyro\src\main\cpp\SwerveModule.cpp: In constructor 'SwerveModule::SwerveModule(int, int)':
-C:\Users\FRC Programmers\Desktop\FRC Programs\SwerveMainTestWithGyro\src\main\cpp\SwerveModule.cpp:42:33: warning: 'relativeEncoder' may be used uninitialized in this function [-Wmaybe-uninitialized]
-     m_turningEncoder.SetPosition(relativeEncoder);
-     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
 
 compiling Robot.cpp successful.
 In file included from C:\Users\FRC Programmers\.gradle\caches\transforms-2\files-2.1\246d2968206faa917dfa3b06fbd3505b\SparkMax-cpp-1.5.4-headers/rev/CANSparkMax.h:37:0,
@@ -24,10 +16,56 @@ C:\Users\FRC Programmers\.gradle\caches\transforms-2\files-2.1\246d2968206faa917
      enum class LimitSwitch { kForward, kReverse };
                 ^~~~~~~~~~~
 C:\Users\FRC Programmers\.gradle\caches\transforms-2\files-2.1\246d2968206faa917dfa3b06fbd3505b\SparkMax-cpp-1.5.4-headers/rev/CANDigitalInput.h:42:16: note: attribute for 'enum class rev::CANDigitalInput::LimitSwitch' must follow the 'enum class' keyword
-C:\Users\FRC Programmers\Desktop\FRC Programs\SwerveMainTestWithGyro\src\main\cpp\Robot.cpp: In member function 'void Robot::DriveWithJoystick(bool)':
-C:\Users\FRC Programmers\Desktop\FRC Programs\SwerveMainTestWithGyro\src\main\cpp\Robot.cpp:210:10: warning: variable 'rot' set but not used [-Wunused-but-set-variable]
-     auto rot = m_rotLimiter.Calculate((rotError/180)*kProt) * Drivetrain::kMaxAngularSpeed;
-          ^~~
+C:\Users\FRC Programmers\Desktop\FRC Programs\SwerveMainTestWithGyro\src\main\cpp\Robot.cpp: In member function 'virtual void Robot::TeleopInit()':
+C:\Users\FRC Programmers\Desktop\FRC Programs\SwerveMainTestWithGyro\src\main\cpp\Robot.cpp:506:54: warning: 'br_relativeEncoder' may be used uninitialized in this function [-Wmaybe-uninitialized]
+     m_swerve.m_backRight.m_turningEncoder.SetPosition(br_relativeEncoder);
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+C:\Users\FRC Programmers\Desktop\FRC Programs\SwerveMainTestWithGyro\src\main\cpp\Robot.cpp:462:10: note: 'br_relativeEncoder' was declared here
+   double br_relativeEncoder;
+          ^~~~~~~~~~~~~~~~~~
+C:\Users\FRC Programmers\Desktop\FRC Programs\SwerveMainTestWithGyro\src\main\cpp\Robot.cpp:495:53: warning: 'bl_relativeEncoder' may be used uninitialized in this function [-Wmaybe-uninitialized]
+     m_swerve.m_backLeft.m_turningEncoder.SetPosition(bl_relativeEncoder);
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+C:\Users\FRC Programmers\Desktop\FRC Programs\SwerveMainTestWithGyro\src\main\cpp\Robot.cpp:461:10: note: 'bl_relativeEncoder' was declared here
+   double bl_relativeEncoder;
+          ^~~~~~~~~~~~~~~~~~
+C:\Users\FRC Programmers\Desktop\FRC Programs\SwerveMainTestWithGyro\src\main\cpp\Robot.cpp:484:55: warning: 'fr_relativeEncoder' may be used uninitialized in this function [-Wmaybe-uninitialized]
+     m_swerve.m_frontRight.m_turningEncoder.SetPosition(fr_relativeEncoder);
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+C:\Users\FRC Programmers\Desktop\FRC Programs\SwerveMainTestWithGyro\src\main\cpp\Robot.cpp:460:10: note: 'fr_relativeEncoder' was declared here
+   double fr_relativeEncoder;
+          ^~~~~~~~~~~~~~~~~~
+C:\Users\FRC Programmers\Desktop\FRC Programs\SwerveMainTestWithGyro\src\main\cpp\Robot.cpp:473:54: warning: 'fl_relativeEncoder' may be used uninitialized in this function [-Wmaybe-uninitialized]
+     m_swerve.m_frontLeft.m_turningEncoder.SetPosition(fl_relativeEncoder);
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+C:\Users\FRC Programmers\Desktop\FRC Programs\SwerveMainTestWithGyro\src\main\cpp\Robot.cpp:459:10: note: 'fl_relativeEncoder' was declared here
+   double fl_relativeEncoder;
+          ^~~~~~~~~~~~~~~~~~
+C:\Users\FRC Programmers\Desktop\FRC Programs\SwerveMainTestWithGyro\src\main\cpp\Robot.cpp: In member function 'virtual void Robot::TeleopPeriodic()':
+C:\Users\FRC Programmers\Desktop\FRC Programs\SwerveMainTestWithGyro\src\main\cpp\Robot.cpp:506:54: warning: 'br_relativeEncoder' may be used uninitialized in this function [-Wmaybe-uninitialized]
+     m_swerve.m_backRight.m_turningEncoder.SetPosition(br_relativeEncoder);
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+C:\Users\FRC Programmers\Desktop\FRC Programs\SwerveMainTestWithGyro\src\main\cpp\Robot.cpp:462:10: note: 'br_relativeEncoder' was declared here
+   double br_relativeEncoder;
+          ^~~~~~~~~~~~~~~~~~
+C:\Users\FRC Programmers\Desktop\FRC Programs\SwerveMainTestWithGyro\src\main\cpp\Robot.cpp:495:53: warning: 'bl_relativeEncoder' may be used uninitialized in this function [-Wmaybe-uninitialized]
+     m_swerve.m_backLeft.m_turningEncoder.SetPosition(bl_relativeEncoder);
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+C:\Users\FRC Programmers\Desktop\FRC Programs\SwerveMainTestWithGyro\src\main\cpp\Robot.cpp:461:10: note: 'bl_relativeEncoder' was declared here
+   double bl_relativeEncoder;
+          ^~~~~~~~~~~~~~~~~~
+C:\Users\FRC Programmers\Desktop\FRC Programs\SwerveMainTestWithGyro\src\main\cpp\Robot.cpp:484:55: warning: 'fr_relativeEncoder' may be used uninitialized in this function [-Wmaybe-uninitialized]
+     m_swerve.m_frontRight.m_turningEncoder.SetPosition(fr_relativeEncoder);
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+C:\Users\FRC Programmers\Desktop\FRC Programs\SwerveMainTestWithGyro\src\main\cpp\Robot.cpp:460:10: note: 'fr_relativeEncoder' was declared here
+   double fr_relativeEncoder;
+          ^~~~~~~~~~~~~~~~~~
+C:\Users\FRC Programmers\Desktop\FRC Programs\SwerveMainTestWithGyro\src\main\cpp\Robot.cpp:473:54: warning: 'fl_relativeEncoder' may be used uninitialized in this function [-Wmaybe-uninitialized]
+     m_swerve.m_frontLeft.m_turningEncoder.SetPosition(fl_relativeEncoder);
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+C:\Users\FRC Programmers\Desktop\FRC Programs\SwerveMainTestWithGyro\src\main\cpp\Robot.cpp:459:10: note: 'fl_relativeEncoder' was declared here
+   double fl_relativeEncoder;
+          ^~~~~~~~~~~~~~~~~~
 
 compiling Drivetrain.cpp successful.
 In file included from C:\Users\FRC Programmers\.gradle\caches\transforms-2\files-2.1\246d2968206faa917dfa3b06fbd3505b\SparkMax-cpp-1.5.4-headers/rev/CANSparkMax.h:37:0,
